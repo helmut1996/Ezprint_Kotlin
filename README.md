@@ -1,5 +1,5 @@
 # Ezprint_Kotlin
-Ejemplo de conexion y impresion en Impresoras Datamax y Honeywell RP4 con el lenguaje nativo compatibles EZPRINT utilizando  KOTLIN
+Ejemplo de conexion por Bluetooth compatible con android 12 utilizando Impresoras Datamax y Honeywell RP4 con el lenguaje nativo compatibles EZPRINT utilizando  KOTLIN 
 
 ESTA ES LA PANTALLA PARA ACYVAR, DESACTIVAR Y MOSTRAR LOS DISPOSITIVOS VINCULADOS POR BLUETOOTH
 ![APP 2](https://user-images.githubusercontent.com/30960370/200424404-8466c38f-a485-4d9f-828a-1e34269a2c1d.jpg)
