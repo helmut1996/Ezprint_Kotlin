@@ -1,7 +1,11 @@
 <resources>
-    <string name="app_name">LiveDataViewModel</string>
+    <string name="app_name">CONNECT BLUETOOTH PRINTER</string>
     <string name="activar">Activar Blue</string>
     <string name="apagar">Apagar Blue</string>
     <string name="buscar">Buscar dispisitivos</string>
     <string name="TEXTO">CONNET BLUETOOTH PRINTER</string>
+    <string name="dir">address</string>
+    <string name="imp">Imprimir</string>
+    <string name="desc">Desconectar</string>
+    <string name="name">Name</string>
 </resources>
