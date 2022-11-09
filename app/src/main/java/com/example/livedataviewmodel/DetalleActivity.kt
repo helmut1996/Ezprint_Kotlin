@@ -61,7 +61,7 @@ class DetalleActivity : AppCompatActivity() {
 
     }
     private fun sendCommand(){
-        val ss = imp.Formato2()
+        val ss = imp.Formato1()
         if(m_bluetoothSocket != null){
             try{
                 m_bluetoothSocket!!.outputStream.write(ss, 0, ss!!.size)
