@@ -54,6 +54,9 @@ class DetalleActivity : AppCompatActivity() {
         binding.btnImpriir.setOnClickListener {
             sendCommand()
         }
+        binding.btnPrint2.setOnClickListener {
+            PrinterFormat2()
+        }
 
         binding.btnDenectar.setOnClickListener {
             disconnect()
@@ -61,6 +64,17 @@ class DetalleActivity : AppCompatActivity() {
 
     }
     private fun sendCommand(){
+        val ss = imp.Formato2()
+        if(m_bluetoothSocket != null){
+            try{
+                m_bluetoothSocket!!.outputStream.write(ss, 0, ss!!.size)
+            }catch(e: IOException){
+                e.printStackTrace()
+            }
+        }
+    }
+
+    private fun PrinterFormat2(){
         val ss = imp.Formato1()
         if(m_bluetoothSocket != null){
             try{

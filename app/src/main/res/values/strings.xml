@@ -5,7 +5,8 @@
     <string name="buscar">Buscar dispisitivos</string>
     <string name="TEXTO">CONNET BLUETOOTH PRINTER</string>
     <string name="dir">address</string>
-    <string name="imp">Imprimir</string>
+    <string name="imp">Imprimir1</string>
+    <string name="imp2">Imprimir QR</string>
     <string name="desc">Desconectar</string>
     <string name="name">Name</string>
 </resources>

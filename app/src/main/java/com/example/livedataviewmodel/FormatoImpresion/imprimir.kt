@@ -64,8 +64,8 @@ class imprimir {
         with(sbResultado) {
             append(ESC + "EZ{PRINT:\n")
 
-            append("@").append(y).append(",").append(x).append(DP).append(QRCODE).append(2).append(9).append(0).append(LN).append("52584501251").append(LN)
-           // append("@").append(y+space).append(",").append(x).append(DP).append(FONTBOLD).append(LN).append("USANDO KOTLIN :)").append(LN)
+            append("@").append(y).append(",").append(x).append(DP).append(QRCODE).append(1).append(9).append(0).append(LN).append("52584501251").append(LN)
+            append("@").append(y+120).append(",").append(x).append(DP).append(FONTBOLD).append(LN).append("USANDO KOTLIN :)").append(LN)
             append("}")
         }
         return stringToByteArray(sbResultado.toString())
@@ -78,6 +78,7 @@ class imprimir {
         var x:Int = 0
         var x2:Int = 100
         var x3:Int = 450
+        var x4:Int = 450
         var space:Int = 20
 
         var sbResultado = StringBuilder()
@@ -312,6 +313,7 @@ class imprimir {
             // ALCALDIA CIA
             y += space
             append("@").append(y).append(",").append(x3).append(DP).append(FONTBOLD2).append(LN).append("ALCALDIA-CIA").append(LN)
+            append("@").append(y).append(",").append(x3+150).append(DP).append(FONTBOLD2).append(LN).append("51234").append(LN)
             for (indice in alcaldia_cia.indices){
                 y += 20
                 append("@").append(y).append(",").append(x3).append(DP).append(FONT).append(LN).append(alcaldia_cia[indice]).append(LN)
@@ -326,6 +328,8 @@ class imprimir {
 
             /*TODO: PARTE 3 FIN */
 
+
+            /*TODO: PARTE 4 */
             y =180
             x = 0
             x2=110
@@ -360,13 +364,13 @@ class imprimir {
             //L ACTUAL
             for (indice in munbers.indices){
                 y+=20
-                append("@").append(y+space).append(",").append(x+280).append(DP).append(FONTSMALL).append(LN).append(munbers[indice]).append(LN)
+                append("@").append(y+space).append(",").append(x+260).append(DP).append(FONTSMALL).append(LN).append(munbers[indice]).append(LN)
             }
             y =180
             //CONSUMO
             for (indice in munbers.indices){
                     y+=20
-                append("@").append(y+space).append(",").append(x+350).append(DP).append(FONTSMALL).append(LN).append(munbers[indice]).append(LN)
+                append("@").append(y+space).append(",").append(x+330).append(DP).append(FONTSMALL).append(LN).append(munbers[indice]).append(LN)
 
             }
             y =180
@@ -411,7 +415,121 @@ class imprimir {
             append("@").append(y+space+40).append(",").append(x3+300).append(DP).append(FONT).append(LN).append("0135887").append(LN)
             //DIA FACTURADOS
             append("@").append(y+space+40).append(",").append(x3+400).append(DP).append(FONT).append(LN).append("31").append(LN)
+
+
             append("}")
+
+            /*TODO: PARTE 5 FIN */
+
+            y =150
+            x = 50
+            x2=140
+            x3 = 220
+            x4 = 350
+            space = 25
+            append(ESC + "EZ{PRINT:\n")
+            append("@").append(y).append(",").append(x).append(DP).append(FONT).append(LN).append("FACTURA").append(LN)
+            append("@").append(y).append(",").append(x2).append(DP).append(FONTBOLD2).append(LN).append("55854272").append(LN)
+            append("@").append(y+space).append(",").append(x).append(DP).append(FONT).append(LN).append("Registro").append(LN)
+            append("@").append(y+space).append(",").append(x2).append(DP).append(FONT).append(LN).append("955697-6").append(LN)
+            append("@").append(y+space+20).append(",").append(x).append(DP).append(FONT).append(LN).append("NIT").append(LN)
+            append("@").append(y+space+20).append(",").append(x2-40).append(DP).append(FONT).append(LN).append("0614-161195-1030").append(LN)
+            append("@").append(y+space+40).append(",").append(x).append(DP).append(FONT).append(LN).append("Giro").append(LN)
+            append("@").append(y+space+40).append(",").append(x2-40).append(DP).append(FONT).append(LN).append("luz y Fuerza electrica").append(LN)
+            append("@").append(y+space+80).append(",").append(x).append(DP).append(FONT).append(LN).append("Tiraje:").append(LN)
+            append("@").append(y+space+80).append(",").append(x2).append(DP).append(FONT).append(LN).append("12").append(LN)
+            append("@").append(y+space+80).append(",").append(x3).append(DP).append(QRCODE).append(1).append(9).append(0).append(LN).append("52584501251").append(LN)
+
+            //FECHA VENC
+
+            append("@").append(y+space+260).append(",").append(x2).append(DP).append(FONT).append(LN).append("Fecha de").append(LN)
+            append("@").append(y+space+280).append(",").append(x2).append(DP).append(FONT).append(LN).append("Vencimiento").append(LN)
+            append("@").append(y+space+280).append(",").append(x2).append(DP).append(FONT).append(LN).append("Vencimiento").append(LN)
+            append("@").append(y+space+320).append(",").append(x2).append(DP).append(FONTBOLD).append(LN).append("22/02/2021").append(LN)
+
+
+            //NIS-NIC
+            append("@").append(y).append(",").append(x4).append(DP).append(FONTSMALL).append(LN).append("NIC-NIS").append(LN)
+            append("@").append(y+space).append(",").append(x4).append(DP).append(FONTSMALL).append(LN).append("2166857-2166857").append(LN)
+            //MES FACTURADO
+            append("@").append(y).append(",").append(x4+140).append(DP).append(FONTSMALL).append(LN).append("MES FACTURADO").append(LN)
+            append("@").append(y+space).append(",").append(x4+180).append(DP).append(FONTSMALL).append(LN).append("2/2021").append(LN)
+            //TOTAL
+            append("@").append(y).append(",").append(x4+280).append(DP).append(FONTSMALL).append(LN).append("TOTAL,CAESS").append(LN)
+            append("@").append(y+space).append(",").append(x4+280).append(DP).append(FONTSMALL).append(LN).append("TOTAL,ALCACIDA").append(LN)
+
+            append("@").append(y).append(",").append(x4+410).append(DP).append(FONTBOLD2).append(LN).append("$ 50.45").append(LN)
+            append("@").append(y+space).append(",").append(x4+410).append(DP).append(FONTBOLD2).append(LN).append("$ 9.80").append(LN)
+            //ID COBRO
+            append("@").append(y+space+80).append(",").append(x4).append(DP).append(FONTBOLD2).append(LN).append("ID de Cobro").append(LN)
+            append("@").append(y+space+80).append(",").append(x4+140).append(DP).append(FONT).append(LN).append("2156824556-83").append(LN)
+            //NPE
+            append("@").append(y+space+120).append(",").append(x4).append(DP).append(FONTBOLD2).append(LN).append("NEP").append(LN)
+            append("@").append(y+space+120).append(",").append(x4+40).append(DP).append(FONT).append(LN).append("2253 0000 7662 30378752").append(LN)
+            //TOTAL PAGAR
+            append("@").append(y+space+120).append(",").append(x4+280).append(DP).append(FONTSMALL).append(LN).append("TOTAL A PAGAR").append(LN)
+            append("@").append(y+space+120).append(",").append(x4+400).append(DP).append(FONTBOLD2).append(LN).append("$ 50.56").append(LN)
+
+           //CODIGO BARRA
+            append("@").append(y+space+240).append(",").append(x4).append(DP).append(BARCODE).append(LN).append("554554548744548484848448448484").append(LN)
+            append("@").append(y+space+300).append(",").append(x4).append(DP).append(FONTBOLD2).append(LN).append("554554548744548484848448448484").append(LN)
+            append("}")
+            /*TODO:PARTE 6 FIN*/
+
+            y =150
+            x = 50
+            x2=140
+            x3 = 220
+            x4 = 350
+            space = 25
+            append(ESC + "EZ{PRINT:\n")
+            append("@").append(y).append(",").append(x).append(DP).append(FONT).append(LN).append("FACTURA").append(LN)
+            append("@").append(y).append(",").append(x2).append(DP).append(FONTBOLD2).append(LN).append("55854272").append(LN)
+            append("@").append(y+space).append(",").append(x).append(DP).append(FONT).append(LN).append("Registro").append(LN)
+            append("@").append(y+space).append(",").append(x2).append(DP).append(FONT).append(LN).append("955697-6").append(LN)
+            append("@").append(y+space+20).append(",").append(x).append(DP).append(FONT).append(LN).append("NIT").append(LN)
+            append("@").append(y+space+20).append(",").append(x2-40).append(DP).append(FONT).append(LN).append("0614-161195-1030").append(LN)
+            append("@").append(y+space+40).append(",").append(x).append(DP).append(FONT).append(LN).append("Giro").append(LN)
+            append("@").append(y+space+40).append(",").append(x2-40).append(DP).append(FONT).append(LN).append("luz y Fuerza electrica").append(LN)
+            append("@").append(y+space+80).append(",").append(x).append(DP).append(FONT).append(LN).append("Tiraje:").append(LN)
+            append("@").append(y+space+80).append(",").append(x2).append(DP).append(FONT).append(LN).append("12").append(LN)
+            append("@").append(y+space+80).append(",").append(x3).append(DP).append(QRCODE).append(1).append(9).append(0).append(LN).append("52584501251").append(LN)
+
+            //FECHA VENC
+
+            append("@").append(y+space+260).append(",").append(x2).append(DP).append(FONT).append(LN).append("Fecha de").append(LN)
+            append("@").append(y+space+280).append(",").append(x2).append(DP).append(FONT).append(LN).append("Vencimiento").append(LN)
+            append("@").append(y+space+280).append(",").append(x2).append(DP).append(FONT).append(LN).append("Vencimiento").append(LN)
+            append("@").append(y+space+320).append(",").append(x2).append(DP).append(FONTBOLD).append(LN).append("22/02/2021").append(LN)
+
+
+            //NIS-NIC
+            append("@").append(y).append(",").append(x4).append(DP).append(FONTSMALL).append(LN).append("NIC-NIS").append(LN)
+            append("@").append(y+space).append(",").append(x4).append(DP).append(FONTSMALL).append(LN).append("2166857-2166857").append(LN)
+            //MES FACTURADO
+            append("@").append(y).append(",").append(x4+140).append(DP).append(FONTSMALL).append(LN).append("MES FACTURADO").append(LN)
+            append("@").append(y+space).append(",").append(x4+180).append(DP).append(FONTSMALL).append(LN).append("2/2021").append(LN)
+            //TOTAL
+            append("@").append(y).append(",").append(x4+280).append(DP).append(FONTSMALL).append(LN).append("TOTAL,CAESS").append(LN)
+            append("@").append(y+space).append(",").append(x4+280).append(DP).append(FONTSMALL).append(LN).append("TOTAL,ALCALCIDA").append(LN)
+
+            append("@").append(y).append(",").append(x4+410).append(DP).append(FONTBOLD2).append(LN).append("$ 50.45").append(LN)
+            append("@").append(y+space).append(",").append(x4+420).append(DP).append(FONTBOLD2).append(LN).append("$ 9.80").append(LN)
+            //ID COBRO
+            append("@").append(y+space+80).append(",").append(x4).append(DP).append(FONTBOLD2).append(LN).append("ID de Cobro").append(LN)
+            append("@").append(y+space+80).append(",").append(x4+140).append(DP).append(FONT).append(LN).append("2156824556-83").append(LN)
+            //NPE
+            append("@").append(y+space+120).append(",").append(x4).append(DP).append(FONTBOLD2).append(LN).append("NEP").append(LN)
+            append("@").append(y+space+120).append(",").append(x4+40).append(DP).append(FONT).append(LN).append("2253 0000 7662 30378752").append(LN)
+            //TOTAL PAGAR
+            append("@").append(y+space+120).append(",").append(x4+280).append(DP).append(FONTSMALL).append(LN).append("TOTAL A PAGAR").append(LN)
+            append("@").append(y+space+120).append(",").append(x4+400).append(DP).append(FONTBOLD2).append(LN).append("$ 50.56").append(LN)
+
+            //CODIGO BARRA
+            append("@").append(y+space+240).append(",").append(x4).append(DP).append(BARCODE).append(LN).append("554554548744548484848448448484").append(LN)
+            append("@").append(y+space+300).append(",").append(x4).append(DP).append(FONTBOLD2).append(LN).append("554554548744548484848448448484").append(LN)
+            append("}")
+            /*TODO:PARTE 7 FIN*/
         }
 
 
