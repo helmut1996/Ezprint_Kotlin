@@ -21,17 +21,17 @@ class imprimir {
   private val SEPARADOR2 = "________________________________________________________________________________"
 
     /*TODO: TIPOS DE BAR CODES*/
-    val BARCODE = "EN128, HIGH 12, WIDE 2"
-    val BARCODE2 = "BC128, HIGH 12, WIDE 3"
-    var BARCODE3 = "PD417, HIGH 10, WIDE 1"
-    var BARCODEWIDTH = "EAN08, HIGH 18, WIDE 1"
-    var BARCODEBOLD = "EAN13,HIGH 12, WIDE 1"
-    var BARCODEBOLD2 = "PD417,HIGH 12, WIDE 1"
-    val BARCODELITTLE = "BC39W, HIGH 8, WIDE 1"
-    val BARCODELARGE = "BC128 HIGH 12, WIDE 2"
+    private val BARCODE = "EN128, HIGH 12, WIDE 2"
+   private val BARCODE2 = "BC128, HIGH 12, WIDE 3"
+   private val BARCODE3 = "PD417, HIGH 10, WIDE 1"
+   private val BARCODEWIDTH = "EAN08, HIGH 18, WIDE 1"
+   private val BARCODEBOLD = "EAN13,HIGH 12, WIDE 1"
+   private val BARCODEBOLD2 = "PD417,HIGH 12, WIDE 1"
+   private val BARCODELITTLE = "BC39W, HIGH 8, WIDE 1"
+   private val BARCODELARGE = "BC128 HIGH 12, WIDE 2"
 
     /*TODO: TIPOS DE BAR CODES*/
-    val QRCODE ="QR_BC,SECURITY"
+   private val QRCODE ="QR_BC,SECURITY"
 
   private val LN = "|"
   private val DP = ":"
@@ -58,6 +58,8 @@ class imprimir {
     var sdata5:String= ""
     var sdata3:String= ""
     var sdata4:String= ""
+    var SS = " `!~ @ #  \$ % ^ & * () = + {} [] // ? |"
+    var LL = "\"ñ Ñ á Á é É í Í ó Ó ú  ü Ü"
     @Throws(IOException::class)
     fun Formato1(): ByteArray? {
         val sbResultado = StringBuilder()
@@ -538,6 +540,24 @@ class imprimir {
     }
 
 
+    @Throws(IOException::class)
+    fun Formato3(): ByteArray? {
+        val s:String= formatStrig(SS)
+        val l:String = formatLetra(LL)
+
+        val sbResultado = StringBuilder()
+        with(sbResultado) {
+            append(ESC + "EZ{PRINT:\n")
+            append("@").append(20).append(",").append(x).append(DP).append(FONTBOLD).append(LN).append(" Letras  ").append(LN)
+            append("@").append(40).append(",").append(x).append(DP).append(FONTBOLD).append(LN).append(" Simbolos  ").append(LN)
+           append("@").append(50).append(",").append(x).append(DP).append(FONTBOLD).append(LN).append(s).append(LN)
+            append("@").append(100).append(",").append(x).append(DP).append(FONTBOLD).append(LN).append(l).append(LN)
+
+
+            append("}")
+        }
+        return stringToByteArray(sbResultado.toString())
+    }
 
     @Throws(IOException::class)
     fun stringToByteArray(s: String): ByteArray? {
@@ -547,5 +567,59 @@ class imprimir {
         ByteArray.write(buf)
         b = ByteArray.toByteArray()
         return b
+    }
+
+    fun formatStrig(text:String):String{
+
+
+        // simbolos
+        text.replace("/","")
+        text.replace("|","")
+        text.replace("@","")
+        text.replace("$","")
+        text.replace("#","")
+        text.replace("*","")
+        text.replace("`","")
+        text.replace("~","")
+        text.replace("^","")
+        text.replace("&","")
+        text.replace("(","")
+        text.replace(")","")
+        text.replace("-","")
+        text.replace("+","")
+        text.replace("=","")
+        text.replace("{","")
+        text.replace("}","")
+        text.replace("%","")
+        text.replace("!","")
+        text.replace("[","")
+        text.replace("]","")
+        text.replace(":","")
+        text.replace(";","")
+        text.replace("?","")
+        text.replace("¿","")
+        text.replace("¨","")
+        text.replace("\\","")
+
+        return text
+    }
+
+    fun formatLetra(text:String):String{
+        //letras
+        text.replace("ñ", "n")
+        text.replace("Ñ", "N")
+        text.replace("á", "a")
+        text.replace("Á", "A")
+        text.replace("é", "e")
+        text.replace("É", "E")
+        text.replace("í", "i")
+        text.replace("Í", "I")
+        text.replace("ó", "o")
+        text.replace("Ó", "O")
+        text.replace("ú", "u")
+        text.replace("Ú", "U")
+        text.replace("ü", "u")
+        text.replace("Ü", "U")
+       return text
     }
 }

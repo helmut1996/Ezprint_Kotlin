@@ -9,4 +9,6 @@
     <string name="imp2">Imprimir QR</string>
     <string name="desc">Desconectar</string>
     <string name="name">Name</string>
+    <string name="validar">simbolos</string>
+
 </resources>
